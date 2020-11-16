@@ -155,67 +155,67 @@ library(readxl)
 
 1. 데이터 프레임 $ 컬럼명
 
-   ```R
-   mean(df $ eng)
-   ```
+```R
+mean(df $ eng)
+```
 
 2.  file 읽기
 
-   ```R
-   read_excel("Data/excel_exam.xlsx")
-   ```
+```R
+read_excel("Data/excel_exam.xlsx")
+```
 
 3.  csv 파일 포멧으로 저장
 
-   ``` R
-   write.csv(data, file="savefile.csv")
-   ```
+``` R
+write.csv(data, file="savefile.csv")
+```
 
 4.  구조 확인 `str`
 
-   ``` R
-   str(data) 
-   ```
+``` R
+str(data) 
+```
 
 5. filtering
 
-   ``` R
-   # md+shift+m (%>% pipeline)
-   ```
+``` R
+md+shift+m (%>% pipeline)
+```
 
 6. ifelse를 중첩시켜서 조건문을 완성
 
-   ``` R
-   reexam$hakjum<-ifelse(reexam$math<=50, "C",
+``` R
+reexam$hakjum<-ifelse(reexam$math<=50, "C",
    				ifelse(reexam$math<=80, "B", "A"))
-   ```
+```
 
 7. 정렬
 
-   ```R
-   exam %>%
+```R
+exam %>%
      arrange(math) #sort: default ascending
-   ```
+```
 
 8. 새로운 컬럼 추가(mutate)
 
-   ``` R
-   exam %>% 
+``` R
+exam %>% 
      mutate(total=math+english+science,
             mean=total/3) %>% 
      head
-   ```
+```
 
 9. 집계(summarise)
 
-   ``` R
-   exam %>% 
+``` R
+exam %>% 
      group_by(class) %>% 
      summarise(mean_math=mean(math),
                sum_math=sum(math),
                median_math=median(math),
                n=n())
-   ```
+```
 
    * n =n python의 value_counts() 와 비슷 그룹으로 묶인것의 개수를 구해줌..
 
